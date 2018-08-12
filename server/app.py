@@ -16,7 +16,7 @@ lightsOn = False
 
 @app.route('/status')
 def status():
-    return make_response(jsonify({'status': lightsOn}), 200)
+    return make_response(jsonify({'lights_on': lightsOn}), 200)
 
 @app.route('/on')
 def turn_on():
@@ -39,7 +39,7 @@ def turn_on():
 
     lightsOn = True
 
-    return make_response(jsonify({'status': lightsOn}), 200)
+    return make_response(jsonify({'lights_on': lightsOn}), 200)
 
 @app.route('/off')
 def turn_off():
@@ -62,7 +62,7 @@ def turn_off():
 
     lightsOn = False
 
-    return make_response(jsonify({'status': lightsOn}), 200)
+    return make_response(jsonify({'lights_on': lightsOn}), 200)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
